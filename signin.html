@@ -8,19 +8,21 @@
 </head>
 <body>
     <section>
+        <form action="login.php" method="POST">
     <h1>logowanie</h1>
     <div id = "inputbox">
-        <label for = "email">email: </label>
-        <input type = "email" name = "email" required>
+        <label for = "emailin">email: </label>
+        <input type = "email" name = "emailin" required>
     </div>
     <div id = "inputbox">
-        <label for = "password">hasło: </label>
-        <input type = "password" name = "password" required>
+        <label for = "passwordin">hasło: </label>
+        <input type = "password" name = "passwordin" required>
     </div>
     <button type = "submit">zaloguj się</button>
     <div id = "sign_in">
-        <p>Nie masz konta? <a href = "#">zarejestruj się</a></p>
+        <p>Nie masz konta? <a href = "singup.html">zarejestruj się</a></p>
     </div>
+        </form>
     </section>
 </body>
 </html>

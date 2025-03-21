@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Strona główna</title>
+</head>
+<body>
+    <header>
+        <div id="head">
+            <div id="left">
+                <p id="date"></p>
+            </div>
+            <div id="right">
+                <p>Ku: <span id="username"></span>!</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="main">
+            <p>Witam <span id="username"></span>!</p>
+            <p>Program dla rządzania</p>
+            <p>swoimi poprawami.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div id="foot"></div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Pobranie nazwy użytkownika z URL-a
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Wstawienie nazwy użytkownika lub "Gość"
+            const username = getQueryParam('username') || 'Gość';
+            document.querySelectorAll('#username').forEach(el => el.textContent = username);
+
+            // Wyświetlanie daty
+            function showDate() {
+                const now = new Date();
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const year = now.getFullYear();
+                document.getElementById('date').textContent = `${day}.${month}.${year}`;
+            }
+            showDate();
+        });
+    </script>
+</body>
+</html>

@@ -8,10 +8,8 @@ $dbname = "project_poprawy";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+
+
 
 // Check if form data is set
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['class'])) {
@@ -20,6 +18,8 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     $email = $_POST['email'];
     $pass = $_POST['password'];
     $class = $_POST['class'];
+
+    echo $class;
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (username, email, password, class) VALUES (?, ?, ?, ?)");
@@ -32,11 +32,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         echo "Error: " . $stmt->error;
     }
 
-    // Close connection
-    $stmt->close();
-} else {
-    echo "Form data is missing";
+    $conn->close();
 }
 
-$conn->close();
 ?>

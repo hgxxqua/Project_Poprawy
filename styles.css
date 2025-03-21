@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    
+    background-image: url("giphy.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#head {
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+    margin-bottom: 40px;
+}
+
+#head #left {
+    text-align: left;
+}
+
+#head #right {
+    text-align: right;
+}
+
+#main{
+    position: relative;
+	width: 500px;
+    height: 400px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 3rem;
+	color: #fff;
+    margin: auto;
+}
+#main p{
+    font-size: 20px;
+}
+
+#foot{
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;   
+    margin-top: 40px;
+}
